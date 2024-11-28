@@ -1,0 +1,204 @@
+/* Standard CSS reset */
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Standard CSS reset */
+
+body{
+    background-color: white;
+    width: 100%;
+}
+
+.container{ 
+    display: flex; /* This makes it possible to manipulate the items inside of the container */
+    flex-direction: row; /* Puts the items on a row */
+    align-items: center; /* Center the alignments for all the items of the container */
+    justify-content: center; /* Center all items in a horizontal row */
+    margin: 0 auto; /* Center all items on the screen */
+}
+
+.left{
+    flex:1; /* This will fit the left container on 1 part of the screen */
+    display: flex; /* This makes it possible to manipulate the items inside of the container */
+    flex-direction: column; /* Put the items on a column */
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px; /* Internal spacing of 0 pixels on top and bottom, and 24px on left and right */
+}
+
+.left h1{
+    width: 100%; /* Try to get the maximum amount of width */
+    max-width: 560px; /* Maximum amount of width that it can achieve */
+    margin-bottom: 18px; /* Puts a margin on the bottom of the text to make some space between it and the form */
+    font-size: 32px; /* Sets the font size to 32 pixels */
+}
+
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Puts the items in the form on a column */
+    width: 100%; /* Try to get the maximum amount of width */
+    max-width: 560px; /* Maximum amount of width that it can achieve */
+    z-index: 9; /* This makes nothing be able to be put on top of the form */
+}
+
+.input{
+    border: 1px solid black; /* This gives every input a border, with a 1px size, solid weight and black color */
+    border-radius: 4px; /* This gives the border a rounded edge of 4 pixels */
+    margin-bottom: 18px; /* Creates a space of 18 pixels beneath every input */
+    min-width: 100%; /* Gets the maximum amount of width inside the form */
+    padding: 0 14px; /* Internal spacing of 0 pixels on top and bottom, and 14px on left and right */
+}
+
+.form input[type="text"], .form input[type="email"], .form input[type="password"]{
+    height: 42px; /* Gives 42 pixels of height to every input */
+}
+
+.button{
+    background-color: #0056fb; /* Sets the button color */
+    height: 42px; /* Sets the height of 42 pixels to the button (same as the form inputs) */
+    border-radius: 4px; /* Gives a rounded edge of 4 pixels to the button */
+    color: white; /* Sets the color os what's inside of the button */
+    font-size: 16px; /* Sets the font of what's written inside of the button */
+    font-weight: bold; /* Sets the weight of what's written inside of the button*/
+    width: 100%; /* Try to get the maximum amount of width */
+    max-width: 560px; /* Maximum amount of width that it can achieve as in the form */
+    cursor: pointer; /* Shows a pointer when you hover the mouse on the button, indicating it's clickable */
+    margin-bottom: 18px; /* Creates a space of 18 pixels beneath the button */
+    transition: background-color 0.5s linear; /* The button will change colors when hovered after 0.5 seconds with a linear effect */
+    z-index: 2;
+}
+
+.button:hover{
+    background-color: #008afb; /* Sets the color in which the button will transform to when hovered */
+}
+
+.area{
+    width: 100%; /* Try to get the maximum amount of width */
+    max-width: 560px;  /* Maximum amount of width that it can achieve in the container */
+    margin-bottom: 18px; /* Creates a space of 18 pixels beneath */
+}
+
+.link{
+    align-self: flex-start; /* This displays the items on the start of the box */
+    font-weight: bold; /* Changes the font weight */
+}
+
+.link a{
+    text-decoration: none; /* Removes the underline from the link */
+    color: black; /* Sets the link color */
+    font-weight: normal; /* Changes the font weight (if on normal, it's the regular weight) */
+    margin-left: 6px; /* Creates a space of 6 pixels to the left, to make some space between .link and .link a */
+}
+
+.right{
+    flex:1; /* This will fit the right container on 1 part of the screen (since there are only 2 containers as sides, the screen will be split in only 2, the left and the right container */
+    background-color: #0056fb; /* Sets the background color for the second container */
+    height: 100vh; /* Gets 100% of the user screen */
+    display: flex;
+    flex-direction: column; /* Puts the items on a column */
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px; /* Internal spacing of 0 pixels on top and bottom, and 24px on left and right */
+}
+
+.info-img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+.subtitle{
+    max-width: 400px;
+    font-size: 38px;
+    color: white;
+    margin-bottom: 18px;
+}
+
+.description{
+    max-width: 400px;
+    line-height: 150%; /* Spaces out the lines */
+    color: white;
+}
+
+/* Decoration behind button */
+
+.form::before{
+    content: '';
+    position: absolute;
+    background-image: url(assets/code.svg);
+    background-size: 90px;
+    background-repeat: no-repeat;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+    opacity: 0.4;
+    bottom: -50px;
+    right: -35px;
+}
+
+/* Decoration behind button */
+
+/* Responsivity on 700px */
+
+@media (max-width: 700px){
+    .container{
+        flex-direction: column; /* Changed the direction from row to column, to fit on the user's screen */
+        min-height: 100vh; /* This gets the whole user screen */
+    }
+
+    .left{
+        width: 85%;
+        padding: 24px 0;
+    }
+
+    .left h1{
+        margin-bottom: 18px;
+    }
+
+    .right{
+        padding: 32px 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form::before{
+        background-size: 80px;
+        width: 82px;
+        height: 82px;
+        bottom: -46px;
+        right: -30px;
+    }
+}
+
+/* Responsivity on 700px */
+
+/* Responsivity on 500px */
+
+@media (max-width: 500px){
+    .info-img{
+        width: 84%;
+    }
+
+    .subtitle{
+        margin-bottom: 18px;
+        font-size: 32px;
+        max-width: 400px;
+        padding: 0 14px;
+        text-align: center;
+    }
+
+    .description{
+        max-width: 400px;
+        padding: 0 14px;
+    }
+}
+
+/* Responsivity on 500px */
