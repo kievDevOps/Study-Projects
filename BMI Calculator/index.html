@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <form onsubmit="return calculate(event)"> <!-- When the form is submitted, the function "calculate(event)" will be returned -->
+        <label>What's your weight?</label><br>
+        <input type="text" name="weight" id="weight" placeholder="..."><br><br>
+        <label>What's your height?</label><br>
+        <input type="text" name="height" id="height" placeholder="..."><br><br>
+        <input type="submit" value="Calculate BMI">
+    </form>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
